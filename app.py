@@ -93,13 +93,6 @@ def index():
 
 @myApp.route('/login',methods=['POST','GET'])
 def login():
-    if request.method=="POST":
-        uname=request.form['username']
-        upass=request.form['password']
-        log=Teacher.query.filter_by(name=uname, password=upass)
-
-    if log:
-      return render_template('index.html')
 
       return render_template('login.html')
     #return "<h1>Hello login!</h1><h1>Hello login!</h1><h1>Hello login!</h1>"
