@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table border="1">
+<!--    {{ name }}-->
+<h2>Teachers</h2>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+
+    {% for user in users %}
+    <tr><td>{{ user["name"] }}</td><td>{{ user["city"] }}</td><td>{{ user["password"] }}</td> <td>
+          <form action="/delete" method="post">
+                    <input name="target_user" value={{user["name"]}} type="hidden" />
+                 <button>DELETE</button>
+          </form>
+    </td> </tr>
+    {% endfor %}
+</table>
+
+<h2>Students</h2>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+
+    {% for user1 in users1 %}
+    <tr><td>{{ user1["name"] }}</td><td>{{ user1["city"] }}</td><td>{{ user1["password"] }}</td> <td>
+          <form action="/delete" method="post">
+                    <input name="target_user1" value={{user1["name"]}} type="hidden" />
+                 <button>DELETE</button>
+          </form>
+    </td> </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>
